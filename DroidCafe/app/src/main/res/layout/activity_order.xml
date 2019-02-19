@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+    <TextView
+        android:id="@+id/lbl_OrderedItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/textview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="You ordered a donut." />
+
+    <TextView
+        android:id="@+id/lbl_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_OrderedItem"
+        tools:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="@string/enter_name"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/lbl_Name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lbl_Name"
+        android:autofillHints="" tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/lbl_Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Name"
+        />
+
+    <EditText
+        android:id="@+id/txt_Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text=""
+        android:hint="@string/type_address"
+        app:layout_constraintStart_toEndOf="@+id/lbl_Address"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lbl_Address"
+        android:autofillHints="" tools:targetApi="o" />
+
+
+    <TextView
+        android:id="@+id/lbl_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Address"
+        />
+
+    <EditText
+        android:id="@+id/txt_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:text=""
+        android:hint="@string/phone_number"
+        app:layout_constraintStart_toEndOf="@+id/lbl_Phone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lbl_Phone"
+        android:autofillHints="" tools:targetApi="o" />
+
+
+    <TextView
+        android:id="@+id/lbl_Note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/note"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Phone"
+        />
+
+    <EditText
+        android:id="@+id/txt_Note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textCapSentences|textMultiLine"
+        android:text=""
+        android:hint="@string/add_notes"
+        app:layout_constraintStart_toEndOf="@+id/lbl_Note"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lbl_Note"
+        android:autofillHints="" tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/lbl_DeliveryMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/deliveryMethod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_Note"
+        />
+
+    <RadioGroup
+        android:id="@+id/rad_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_DeliveryMethod"
+        >
+        <RadioButton
+            android:id="@+id/rad_sameday"
+            android:text="@string/sameday"
+            android:onClick="onRadioButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rad_nextday"
+            android:text="@string/nextday"
+            android:onClick="onRadioButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/rad_pickup"
+            android:text="@string/pickup"
+            android:onClick="onRadioButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
